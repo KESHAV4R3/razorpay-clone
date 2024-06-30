@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.feature_card_2:hover svg {
+    filter: drop-shadow(0 2px 204px rgba(0, 0, 0, 0.4));
+    stroke-opacity: 0 !important;
+}
+
+/* animation company name */
+
+.companies_name {
+    animation-name: move_image;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* animation reviews */
+
+
+.company_name_scroll {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.593) 5%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.593));
+}
+
+.review_animation {
+    animation-name: review_motion;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes review_motion {
+    from {
+        margin-left: 0%
+    }
+
+    to {
+        margin-left: -300%
+    }
+}
+
+@keyframes move_image {
+    from {
+        margin-top: 0%
+    }
+
+    to {
+        margin-top: -100%
+    }
+}
+
+
+/* media queries */
+
+/* small mobiles */
+@media (max-width:330px) {
+    .nav_bar {
+        grid-template-columns: 80% 20%;
+        grid-template-areas: "navBar_r1_c1 navBar_r1_c2";
+    }
+
+    .section_1 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr, 1fr;
+        grid-template-areas: "section1_r1" "section1_r2";
+    }
+
+    .section_1_leftpart {
+        grid-area: section1_r1;
+    }
+
+    .section_1_rightpart {
+        grid-area: section1_r2;
+    }
+}
+
+/* mobiles */
+@media (min-width:330px) and (max-width:610px) {
+    .nav_bar {
+        grid-template-columns: 60% 30% 10%;
+        grid-template-areas: "navBar_r1_c1 navBar_r1_c2 navBar_r1_c3";
+    }
+
+    .nav_bar_sidebar {
+        grid-area: navBar_r1_c3;
+    }
+}
+
+/* tablets */
+@media (min-width:610px) and (max-width:2000px) {
+    .nav_bar {
+        height: 130px;
+        grid-template-columns: 60% 15% 15% 10%;
+        grid-template-areas: "navBar_r1_c1 navBar_r1_c2 navBar_r1_c3 navBar_r1_c3" "navBar_r2 navBar_r2 navBar_r2 navBar_r2";
+    }
+
+    .nav_bar_optionsection {
+        grid-area: navBar_r2;
+    }
+
+    .section_1 {
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "section1_r1_c1 section1_r1_c2";
+    }
+}
+
+/* laptops and big-screen */
+@media (min-width:1200px) {
+    .nav_bar {
+        grid-template-columns: 15% 50% 15% 15% 5%;
+        grid-template-rows: 1;
+        grid-template-areas: "navBar_r1_c1 navBar_r1_c2 navBar_r1_c3 navBar_r1_c3 navBar_r1_c4 navBar_r1_c5";
+    }
+
+    .nav_bar_optionsection {
+        grid-area: navBar_r1_c2;
+    }
+}
